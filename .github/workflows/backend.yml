@@ -49,7 +49,7 @@ jobs:
             if [ "(sudo docker ps -a -q -f name=dockerdb)" ]; then
               sudo docker rm -f  dockerdb
             fi
-            if [ "$(sudo docker ps -a -q -f namer=dockerbackend)" ]; then
+            if [ "$(sudo docker ps -a -q -f name=dockerbackend)" ]; then
               sudo docker rm -f  dockerbackend
             fi
             if [ "$(sudo docker images -q ${{ secrets.DOCKERHUB_USERNAME }}/dockerdb)" ]; then
