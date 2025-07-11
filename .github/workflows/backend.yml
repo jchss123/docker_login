@@ -50,6 +50,7 @@ jobs:
               sudo docker rm -f  dockerdb
             fi
             if [ "$(sudo docker ps -a -q -f namer=dockerbackend)" ]; then
+              sudo docker rm -f  dockerbackend
             fi
             if [ "$(sudo docker images -q ${{ secrets.DOCKERHUB_USERNAME }}/dockerdb)" ]; then
               sudo docker rmi -f ${{ secrets.DOCKERHUB_USERNAME }}/dockerdb
